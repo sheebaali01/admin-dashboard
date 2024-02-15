@@ -3,6 +3,7 @@ import AdminSidebar from '../components/admin-sidebar'
 import TableHOC from '../components/tableHOC';
 import { Link } from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa';
+import { Column } from 'react-table';
 
 interface DataType{
   photo: ReactElement;
