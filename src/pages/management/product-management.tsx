@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, useState,FormEvent } from 'react'
 import AdminSidebar from '../../components/admin-sidebar'
 
 const img =
@@ -10,6 +10,10 @@ const ProductManagement = () => {
     const [stock,setStock] = useState<number>(10);
     const [photo,setPhoto] = useState<string>(img);
 
+    const [nameUpdate,setNameUpdate] = useState<string>(name);
+    const [priceUpdate,setPriceUpdate] = useState<number>(price);
+    const [stockUpdate,setStockUpdate] = useState<number>(stock);
+    const [photoUpdate,setPhotoUpdate] = useState<string>(photo);
     
 
     const changeImageHandler = (e:ChangeEvent<HTMLInputElement>) =>{
@@ -19,10 +23,19 @@ const ProductManagement = () => {
             reader.readAsDataURL(file);
             reader.onload = () =>{
                 if(typeof reader.result==="string"){
-                    setPhoto(reader.result);
+                    setPhotoUpdate(reader.result);
                 }
             }
         }
+
+    }
+
+    const submitHandler = (e:FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setName(nameUpdate);
+        setPrice(priceUpdate);
+        setStock(stockUpdate);
+        setPhoto(photoUpdate);
 
     }
 
@@ -54,8 +67,8 @@ const ProductManagement = () => {
                             required
                             type="text" 
                             placeholder='Name' 
-                            value={name}
-                            onChange={(e)=>setName(e.target.value)}
+                            value={nameUpdate}
+                            onChange={(e)=>setNameUpdate(e.target.value)}
                         />
                     </div>
                     <div>
@@ -64,8 +77,8 @@ const ProductManagement = () => {
                             required
                             type="number" 
                             placeholder='Price' 
-                            value={price}
-                            onChange={(e)=>setPrice(Number(e.target.value))}
+                            value={priceUpdate}
+                            onChange={(e)=>setPriceUpdate(Number(e.target.value))}
                         />
                     </div>
                     <div>
@@ -74,8 +87,8 @@ const ProductManagement = () => {
                             required
                             type="number" 
                             placeholder='Stock' 
-                            value={stock}
-                            onChange={(e)=>setStock(Number(e.target.value))}
+                            value={stockUpdate}
+                            onChange={(e)=>setStockUpdate(Number(e.target.value))}
                         />
                     </div>
                     <div>
@@ -87,9 +100,9 @@ const ProductManagement = () => {
                         />
                     </div>
                     {
-                        photo && <img src={photo} alt="New Image"/>
+                        photoUpdate && <img src={photoUpdate} alt="New Image"/>
                     }
-                    <button type="submit">Create</button>
+                    <button type="submit">Update</button>
                 </form>
             </article>
         </div>
