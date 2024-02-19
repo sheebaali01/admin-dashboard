@@ -96,7 +96,7 @@ const arr: DataType[] = [
     name: "Macbook",
     price: 232223,
     stock: 213,
-    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+    action: <Link to="/admin/products/sdaskdnkasjdn">Manage</Link>,
   },
 ];
 const Products = () => {
@@ -111,7 +111,7 @@ const Products = () => {
         <main>
           {Table()}
         </main>
-        <Link to="/admin/product/new" className='create-product-btn'>
+        <Link to="/admin/products/new" className='create-product-btn'>
           <FaPlus/>
         </Link>
     </div>

@@ -25,8 +25,8 @@ const App = () => {
           {/*Apps*/}
 
           {/*Management*/}
-          <Route path="/admin/product/new" element={<NewProduct />} />   
-          <Route path="/admin/product/:id" element={<ProductManagement />} />   
+          <Route path="/admin/products/new" element={<NewProduct />} />   
+          <Route path="/admin/products/:id" element={<ProductManagement />} />   
           <Route path="/admin/transaction/:id" element={<TransactionManagement />} />   
 
         

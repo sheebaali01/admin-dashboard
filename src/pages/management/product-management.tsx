@@ -59,7 +59,7 @@ const ProductManagement = () => {
                 <h3>${price}</h3>
             </section>
             <article>
-                <form action="">
+                <form action="" onSubmit={submitHandler}>
                     <h2>Manage</h2>
                     <div>
                         <label>Name</label>
