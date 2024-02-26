@@ -7,9 +7,12 @@ import {
   Title,
   Tooltip,
   Legend,
-  ArcElement
+  ArcElement,
+  PointElement,
+  LineElement,
+  Filler,
 } from 'chart.js';
-import { Bar,Doughnut } from 'react-chartjs-2';
+import { Bar,Doughnut,Line, Pie } from 'react-chartjs-2';
 import { ChartData,ChartOptions } from '../../node_modules/chart.js/dist/types';
 
 ChartJS.register(
@@ -19,7 +22,10 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  ArcElement
+  ArcElement,
+  PointElement,
+  LineElement,
+  Filler
 );
 
 
@@ -87,7 +93,7 @@ export const BarChart = ({
           },
         ],
       };
-    return <Bar options={options} data={data} />;
+    return <Bar width={horizontal ? "200%" : ""} options={options} data={data} />;
 };
 
 interface doughnutChartProps {
@@ -130,4 +136,97 @@ export const DoughnutChart = ({labels,data,backgroundColor,cutout,legends=true,o
 
   return <Doughnut data={doughnutData} options={doughnutOptions}/>
 
+};
+
+interface PieChartProps {
+  labels: string[];
+  data: number[];
+  backgroundColor: string[];
+  offset?: number[];
 }
+export const PieChart = ({
+  labels,
+  data,
+  backgroundColor,
+  offset,
+}: PieChartProps) => {
+  const pieChartData: ChartData<"pie", number[], string> = {
+    labels,
+    datasets: [
+      {
+        data,
+        backgroundColor,
+        borderWidth: 1,
+        offset,
+      },
+    ],
+  };
+
+  const pieChartOptions: ChartOptions<"pie"> = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
+
+  return <Pie data={pieChartData} options={pieChartOptions} />;
+};
+
+interface LineChartProps {
+  data: number[];
+  label: string;
+  backgroundColor: string;
+  borderColor: string;
+  labels?: string[];
+}
+
+export const LineChart = ({
+  data,
+  label,
+  backgroundColor,
+  borderColor,
+  labels = months,
+}: LineChartProps) => {
+  const options: ChartOptions<"line"> = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      title: {
+        display: false,
+      },
+    },
+
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: {
+          display: false,
+        },
+      },
+      x: {
+        grid: {
+          display: false,
+        },
+      },
+    },
+  };
+
+  const lineChartData: ChartData<"line", number[], string> = {
+    labels,
+    datasets: [
+      {
+        fill: true,
+        label,
+        data,
+        backgroundColor,
+        borderColor,
+      },
+    ],
+  };
+
+  return <Line options={options} data={lineChartData} />;
+};
