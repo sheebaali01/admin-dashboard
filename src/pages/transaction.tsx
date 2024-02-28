@@ -71,7 +71,8 @@ const arr: DataType[] = [
   },
 ];
 const Transaction = () => {
-  const [data] = useState<DataType>(arr);
+  // const [data] = useState<DataType>(arr);
+  const [data] = useState<DataType[]>(arr);
   const Table = useCallback(
     TableHOC<DataType>(columns,data,"dashboard-product-box","Transactions",true),[]
   );

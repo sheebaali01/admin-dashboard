@@ -33,7 +33,6 @@ const columns: Column<DataType>[] =[
   accessor: 'stock',
 
  },
- ,
  {
   Header: 'Action',
   accessor: 'action',
@@ -101,7 +100,8 @@ const arr: DataType[] = [
 ];
 const Products = () => {
 
-  const [data] = useState<DataType>(arr);
+  // const [data] = useState<DataType>(arr);
+  const [data] = useState<DataType[]>(arr);
   const Table = useCallback(
     TableHOC<DataType>(columns,data,"dashboard-product-box","Products",true),[]
   );
