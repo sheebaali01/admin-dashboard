@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { IconType } from 'react-icons';
 import { AiFillFileText } from 'react-icons/ai';
-import { FaChartBar, FaChartLine, FaChartPie, FaGamepad, FaStopwatch } from 'react-icons/fa';
+import { FaChartBar, FaChartLine, FaChartPie, FaStopwatch } from 'react-icons/fa';
 import { IoIosPeople } from 'react-icons/io';
 import { RiCoupon3Fill, RiDashboardFill, RiShoppingBag3Fill } from 'react-icons/ri';
 import { HiMenuAlt4 } from "react-icons/hi";

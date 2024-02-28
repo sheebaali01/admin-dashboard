@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import {useState,useEffect} from 'react'
 import AdminSidebar from '../../components/admin-sidebar'
 
 const formatTime = (timeInSeconds: number) => {

@@ -1,4 +1,3 @@
-import React from 'react'
 import AdminSidebar from '../components/admin-sidebar'
 import {BsSearch} from 'react-icons/bs';
 import {FaRegBell} from 'react-icons/fa';
