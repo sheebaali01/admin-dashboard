@@ -103,7 +103,7 @@ const PieCharts = () => {
             <DoughnutChart
               labels={["Admin", "Customers"]}
               data={[40, 250]}
-              backgroundColor={[`hsl(335, 100%, 38%)`, "hsl(44, 98%, 50%)"]}
+              backgroundColor={["hsl(335, 100%, 38%)", "hsl(44, 98%, 50%)"]}
               offset={[0, 80]}
             />
           </div>

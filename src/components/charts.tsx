@@ -72,7 +72,7 @@ export const BarChart = ({
       
      
       
-       const data: ChartData<"bar", number[], String> = {
+       const data: ChartData<"bar", number[], string> = {
         labels,
         datasets: [
           {
@@ -99,7 +99,7 @@ export const BarChart = ({
 interface doughnutChartProps {
   labels?: string[];
   data: number[];
-  backgroundColor: string;
+  backgroundColor: string[];
   cutout?: number|string;
   legends?: boolean;
   offset?: number[];
@@ -107,7 +107,7 @@ interface doughnutChartProps {
 }
 
 export const DoughnutChart = ({labels,data,backgroundColor,cutout,legends=true,offset,}:doughnutChartProps) => {
-  const doughnutData: ChartData<"doughnut",number[], String> = {
+  const doughnutData: ChartData<"doughnut",number[], string> = {
     labels,
     datasets: [
       {
