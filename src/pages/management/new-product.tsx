@@ -28,7 +28,7 @@ const NewProduct = () => {
         <AdminSidebar/>
         <div className="product-management"> 
             <article>
-                <form action="" onSubmit={submitHandler}>
+                <form action="" >
                     <h2>New Product</h2>
                     <div>
                         <label>Name</label>

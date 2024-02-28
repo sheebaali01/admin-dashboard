@@ -37,7 +37,7 @@ interface BarChartProps {
     title_2: string;
     bgColor_1: string;
     bgColor_2: string;
-    labels?: String[];
+    labels?: string[];
 }
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 export const BarChart = ({
@@ -97,7 +97,7 @@ export const BarChart = ({
 };
 
 interface doughnutChartProps {
-  labels?: String[];
+  labels?: string[];
   data: number[];
   backgroundColor: string;
   cutout?: number|string;

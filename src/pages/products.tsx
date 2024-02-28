@@ -12,7 +12,7 @@ interface DataType{
   stock: number;
   action:ReactElement
 }
-const columns:Column<DataType>[] =[
+const columns: Column<DataType>[] =[
   {
   Header: 'Photo',
   accessor: 'photo',
